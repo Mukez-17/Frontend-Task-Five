@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- Bootstrap Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Box Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+
+    <Section id="Navigation_bar">
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <h1 class="product_name">Cart</h1>
+                    <img src="./images/cart.png" alt="Cart Icon" class="cart_icon" id="cart-icon" onclick="openCart()">
+                </a>
+                <!-- cart -->
+                <div class="cart">
+                    <h2 class="cart_title">Your Cart</h2>
+                    <div class="cart-content">
+
+                    </div>
+                    <!-- Total -->
+                    <div class="total">
+                        <div class="total-title">Total</div>
+                        <div id="total-price">₹ 0</div>
+                    </div>
+                    <!-- Buy Button -->
+                    <button type="button" class="btn-buy" onclick="BuyNow()">Buy Now</button>
+                    <!-- Cart Close -->
+                    <i class="bx bx-x" id="close-cart" onclick="closedCart()"></i>
+                </div>
+            </div>
+        </nav>
+    </Section>
+
+    <!-- Products -->
+
+    <section id="Products">
+        <h2 class="section_title">Shopping Products</h2>
+        <div class="row">
+
+            <div class="col-lg-3 col-md-4 products_col">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <img src="./images/Sweatshirt.png" alt="Sweatshirt" class="product_image">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Reebok Sweatshirt</h5>
+                        <p class="card-text">₹ 3749</p>
+                        <a href="#" class="btn btn-dark add-cart" onclick="addCart(event)"><img src="./images/shopping-bag.png" alt="Shopping bag" class="shopping-bag"></a>
+                    </div>                    
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 products_col">
+                <div class="card">
+                    <div class="card-header text-center" style="padding: 58px 16px;">
+                        <img src="./images/Cap.png" alt="Cap" class="product_image" style="width: 150px; height: 100px;">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Reebok Cap</h5>
+                        <p class="card-text">₹ 539</p>
+                        <a href="#" class="btn btn-dark add-cart" onclick="addCart(event)"><img src="./images/shopping-bag.png" alt="Shopping bag" class="shopping-bag"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 products_col">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <img src="./images/Slim_Jacket.png" alt="Slim Jacket" class="product_image">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Reebok Jacket</h5>
+                        <p class="card-text">₹ 2299</p>
+                        <a href="#" class="btn btn-dark add-cart" onclick="addCart(event)"><img src="./images/shopping-bag.png" alt="Shopping bag" class="shopping-bag"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 products_col">
+                <div class="card">
+                    <div class="card-header text-center" style="padding: 58px 16px;">
+                        <img src="./images/Shoe.png" alt="Shoe" class="product_image" style="width: 150px; height: 100px;">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Reebok Shoes</h5>
+                        <p class="card-text">₹ 2264</p>
+                        <a href="#" class="btn btn-dark add-cart" onclick="addCart(event)"><img src="./images/shopping-bag.png" alt="Shopping bag" class="shopping-bag"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 products_col">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <img src="./images/Water_Bottle.png" alt="Water Bottle" class="product_image">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Reebok Bottle</h5>
+                        <p class="card-text">₹ 1049</p>
+                        <a href="#" class="btn btn-dark add-cart" onclick="addCart(event)"><img src="./images/shopping-bag.png" alt="Shopping bag" class="shopping-bag"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 products_col">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <img src="./images/Cricket_Bat.png" alt="Cricket Bat" class="product_image">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Reebok Bat</h5>
+                        <p class="card-text">₹ 499</p>
+                        <a href="#" class="btn btn-dark add-cart" onclick="addCart(event)"><img src="./images/shopping-bag.png" alt="Shopping bag" class="shopping-bag"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 products_col">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <img src="./images/Smartwatch.png" alt="Smart Watch" class="product_image">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Reebok Watch</h5>
+                        <p class="card-text">₹ 3899</p>
+                        <a href="#" class="btn btn-dark add-cart" onclick="addCart(event)"><img src="./images/shopping-bag.png" alt="Shopping bag" class="shopping-bag"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 products_col">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <img src="./images/Bag.png" alt="Bag" class="product_image">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Reebok Bag</h5>
+                        <p class="card-text">₹ 1299</p>
+                        <a href="#" class="btn btn-dark add-cart" onclick="addCart(event)"><img src="./images/shopping-bag.png" alt="Shopping bag" class="shopping-bag"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Link JS -->
+    <script src="./script.js"></script>
+</body>
+</html>
