@@ -16,6 +16,7 @@ function CalculateTotal(price, quantity){
     total = total + (price * quantity);
     console.log(total);
     totalPrice.innerText = "₹ " + total;
+    total = 0;
 }
 
 function reduceAmount(price, quantity){
