@@ -1,6 +1,4 @@
-var cartIcon = document.querySelector("#cart-icon");
 var cart = document.querySelector(".cart");
-var closeCart = document.querySelector("#close-cart");
 var total = 0;
 
 function openCart(){
@@ -16,7 +14,6 @@ function CalculateTotal(price, quantity){
     total = total + (price * quantity);
     console.log(total);
     totalPrice.innerText = "₹ " + total;
-    total = 0;
 }
 
 function reduceAmount(price, quantity){
@@ -31,6 +28,7 @@ function BuyNow(){
         cartContent.removeChild(cartContent.firstChild);
     }
     totalPrice.innerText = "₹ " + 0;
+    total = 0;
 }
 
 function addCart(event){
